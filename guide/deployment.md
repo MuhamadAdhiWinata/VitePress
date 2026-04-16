@@ -29,6 +29,25 @@ VitePress dapat di-host di hampir semua layanan hosting statis.
 3. Atur Output Directory: `.vitepress/dist`.
 4. Klik Deploy!
 
+### Cloudflare Pages
+
+Untuk men-deploy VitePress ke Cloudflare Pages, gunakan pengaturan berikut di dashboard Cloudflare:
+
+1.  **Framework Preset**: `None` atau `Other`.
+2.  **Build command**: `npm run docs:build`.
+3.  **Build output directory**: `.vitepress/dist`.
+4.  **Root directory**: `/` (Tetap biarkan default).
+
+**PENTING: Versi Node.js**
+VitePress membutuhkan Node.js v18+. Di dashboard Cloudflare Pages, tambahkan **Environment Variable** berikut:
+- **Variable name**: `NODE_VERSION`
+- **Variable value**: `18` (atau lebih tinggi).
+
+Jika Anda menggunakan CLI (**Wrangler**), perintahnya adalah:
+```bash
+npx wrangler pages deploy .vitepress/dist
+```
+
 ### Preview Lokal
 Setelah melakukan build, Anda dapat mencoba melihat hasilnya secara lokal:
 
